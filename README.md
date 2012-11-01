@@ -1,6 +1,6 @@
 # Dashboarder
 
-TODO: Write a gem description
+An experimental library to help in the construction of Librato Metrics dashboards from simple definitions. 
 
 ## Installation
 
