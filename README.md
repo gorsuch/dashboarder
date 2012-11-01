@@ -28,7 +28,7 @@ $ bundle exec irb -I lib -r dashboarder
 
   # compose an individual instrument
   # will not overwrite if already exists
-  Dashboard::Instrument.compose(['my instrument', :first_metric, :second_metric])
+  Dashboarder::Instrument.compose(['my instrument', :first_metric, :second_metric])
 ```
 
 ## Contributing
