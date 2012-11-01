@@ -9,10 +9,6 @@ module Dashboarder
       @connection ||= connect
     end
 
-    def metric(name)
-      get("/v1/metrics/name")
-    end
-    
     def get(path, options = {})
       JSON.load(connection.get(options.merge(:path => path, :idempotent => true)).body)
     end

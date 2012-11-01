@@ -1,6 +1,5 @@
 module Dashboarder
   module Instrument
-
     def self.get(name)
       Dashboarder.api.get('/v1/instruments', :query => {:name => name})['instruments'].first
     end
