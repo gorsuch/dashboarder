@@ -18,7 +18,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+  dashboard = [
+    [:an_instrument_name, :a_metric_name, :another_metric_name],
+    [:another_instrument_name, :a_metric_name]
+  ]
+  
+  Dashboarder.api.ensure_dashboard('my dashboard', dashboard)
+```
 
 ## Contributing
 
