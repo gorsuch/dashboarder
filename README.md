@@ -18,6 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
+```bash
+$ export LIBRATO_API_URL=https://me%40example.com:api-key@metrics-api.librato.com
+$ bundle exec irb -I lib -r dashboarder
+```
+
 ```ruby
   # a simple dashboard definition
   definition = [
