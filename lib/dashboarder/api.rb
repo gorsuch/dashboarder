@@ -9,23 +9,6 @@ module Dashboarder
       @connection ||= connect
     end
 
-    def create_dashboard(name, instrument_definitions)
-      instrument_ids = instrument_definitions.map { |d| Instrument.compose(d)['id'] }
-      post('/v1/dashboards', { :name => name, :instruments => instrument_ids })
-    end
-    
-    def ensure_dashboard(name, instrument_definitions)
-      dashboard = dashboard(name)
-      unless dashboard
-        dashboard = create_dashboard(name, instrument_definitions)
-      end
-      dashboard
-    end
-    
-    def dashboard(name)
-      get('/v1/dashboards', :query => {:name => name})['dashboards'].first
-    end
-    
     def metric(name)
       get("/v1/metrics/name")
     end
