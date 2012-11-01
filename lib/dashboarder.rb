@@ -7,6 +7,6 @@ require 'dashboarder/version'
 
 module Dashboarder
   def self.api
-    @api ||= @api ||= Api.new
+    @api ||=  Api.new
   end
 end
