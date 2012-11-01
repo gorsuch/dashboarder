@@ -1,14 +1,16 @@
 module Dashboarder
   module Dashboard
-    def self.compose!(name, instrument_definitions)
+    def self.compose!(definition)
+      name = definition.first
+      instrument_definitions = definition[1..-1]
       instrument_ids = instrument_definitions.map { |d| Instrument.compose(d)['id'] }
       Dashboarder.api.post('/v1/dashboards', { :name => name, :instruments => instrument_ids })
     end
     
-    def self.compose(name, instrument_definitions)
-      dashboard = get(name)
+    def self.compose(definition)
+      dashboard = get(definition.first)
       unless dashboard
-        dashboard = compose!(name, instrument_definitions)
+        dashboard = compose!(definition)
       end
       dashboard
     end

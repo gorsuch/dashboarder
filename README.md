@@ -21,12 +21,14 @@ Or install it yourself as:
 ```ruby
   # a simple dashboard definition
   definition = [
+    'my dashboard name',
     [:an_instrument_name, :a_metric_name, :another_metric_name],
     [:another_instrument_name, :a_metric_name]
   ]
   
-  # ensure_dashboard will create the dashboard only if it does not already exist
-  Dashboarder.api.ensure_dashboard('my dashboard', definition)
+  # this will ensure the dashboard exists
+  # will not overwrite if already does
+  Dashboarder::Dashboard.compose(definition)
 ```
 
 ## Contributing
