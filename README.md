@@ -29,6 +29,10 @@ Or install it yourself as:
   # this will ensure the dashboard exists
   # will not overwrite if already does
   Dashboarder::Dashboard.compose(definition)
+
+  # compose an individual instrument
+  # will not overwrite if already exists
+  Dashboard::Instrument.compose(['my instrument', :first_metric, :second_metric])
 ```
 
 ## Contributing
