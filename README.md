@@ -19,7 +19,8 @@ Or install it yourself as:
 ## Usage
 
 ```bash
-$ export LIBRATO_API_URL=https://me%40example.com:api-key@metrics-api.librato.com
+$ export LIBRATO_EMAIL=me@example.com
+$ export LIBRATO_KEY=123456
 $ bundle exec irb -I lib -r dashboarder
 ```
 
