@@ -58,7 +58,7 @@ module Dashboarder
     end
 
     def post(path, body, options = {})
-      JSON.parse(connection.post(options.merge(:path => path, :body => body.to_json, :headers => { 'Content-Type' => 'application/json' })).body)
+      JSON.load(connection.post(options.merge(:path => path, :body => body.to_json, :headers => { 'Content-Type' => 'application/json' })).body)
     end
     
     def connect
