@@ -14,7 +14,6 @@ module Dashboarder
     
     def self.compose(definition)
       name = definition.first
-
       instrument = get(name)
 
       unless instrument

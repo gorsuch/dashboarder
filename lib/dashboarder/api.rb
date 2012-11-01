@@ -2,7 +2,9 @@ module Dashboarder
   class Api
     def initialize(options={})
       @options = options
-      @options[:api_url] = Config.librato_api_url
+      @options[:api_url] = Config.librato_api_url || 'https://metrics-api.librato.com'
+      @options[:api_user] = Config.librato_email
+      @options[:api_pass] = Config.librato_key
     end
 
     def connection
@@ -19,7 +21,19 @@ module Dashboarder
     
     def connect
       uri = URI.parse(@options[:api_url])
-      Excon.new(@options[:api_url], :headers => { 'Authorization' => 'Basic ' + [uri.user.sub('%40', '@') + ':' + uri.password].pack('m').delete(Excon::CR_NL) })
+      Excon.new(api_url, :headers => { 'Authorization' => 'Basic ' + [api_user.sub('%40', '@') + ':' + api_pass].pack('m').delete(Excon::CR_NL) })
+    end
+
+    def api_url
+      @options[:api_url]
+    end
+
+    def api_user
+      @options[:api_user]
+    end
+
+    def api_pass
+      @options[:api_pass]
     end
   end
 end

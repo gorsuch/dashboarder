@@ -7,7 +7,15 @@ module Dashboarder
     end
 
     def librato_api_url
-      env!('LIBRATO_API_URL')
+      ENV['LIBRATO_API_URL']
+    end
+
+    def librato_key
+      env!('LIBRATO_KEY')
+    end
+
+    def librato_email
+      env!('LIBRATO_EMAIL')
     end
   end
 end
