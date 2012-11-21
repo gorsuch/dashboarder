@@ -19,9 +19,7 @@ Or install it yourself as:
 ## Usage
 
 ```bash
-$ export LIBRATO_EMAIL=me@example.com
-$ export LIBRATO_KEY=123456
-$ bundle exec irb -I lib -r dashboarder
+$ LIBRATO_EMAIL=me@example.co LIBRATO_KEY=123456 irb -r dashboarder
 ```
 
 ```ruby
