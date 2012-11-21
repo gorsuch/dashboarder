@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = Dashboarder::VERSION
   gem.authors       = ["Michael Gorsuch"]
   gem.email         = ["michael.gorsuch@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{a lightweight composer for librato instruments and dashboards}
+  gem.summary       = gem.description
+  gem.homepage      = "https://github.com/gorsuch/dashboarder"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
