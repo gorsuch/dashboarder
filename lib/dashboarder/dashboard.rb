@@ -1,6 +1,6 @@
 module Dashboarder
   module Dashboard
-    def self.compose!(name, instrument_names)
+    def self.create!(name, instrument_names)
       instrument_ids = instrument_names.map do |d|
         i = Instrument.get(d) || raise("Instrument #{name} not defined yet")
         i['id']
@@ -9,7 +9,7 @@ module Dashboarder
     end
     
     def self.compose(name, instrument_names)
-      get(name) || compose!(name, instrument_names)
+      get(name) || create!(name, instrument_names)
     end
     
     def self.get(name)
