@@ -4,7 +4,17 @@ An experimental library to help in the construction of Librato Metrics dashboard
 
 ## Installation
 
-Fetch the repo for now.  Will consider a gem release once things seem steady.  
+Add this line to your application's Gemfile:
+
+    gem 'dashboarder'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install dashboarder
 
 ## Usage
 
