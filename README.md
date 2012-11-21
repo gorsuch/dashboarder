@@ -23,24 +23,11 @@ $ LIBRATO_EMAIL=me@example.co LIBRATO_KEY=123456 irb -r dashboarder
 ```
 
 ```ruby
-  # a simple dashboard definition
-  definition = [
-    'my dashboard name',
-    [:an_instrument_name, :a_metric_name, :another_metric_name],
-    [:another_instrument_name, :a_metric_name]
-  ]
-  
-  # this will ensure the dashboard exists
-  # will not overwrite if already does
-  Dashboarder::Dashboard.compose(definition)
+  # compose an instrument
+  Dashboarder::Instrument.compose(:my_instrument, [:my_metric, :my_other_metric])
 
-  # compose an individual instrument
-  # will not overwrite if already exists
-  Dashboarder::Instrument.compose(['my instrument', :first_metric, :second_metric])
-
-  # If an instrument has already been defined, you can compose
-  # like so:
-  Dashboarder::Dashboard.compose([:my_dashboard, :some_instrument, :some_other_instrument])
+  # compose a dashboard
+  Dashboarder::Dashboard.compose(:my_dashboard, [:my_instrument, :my_other_instrument])
 ```
 
 ## Contributing
