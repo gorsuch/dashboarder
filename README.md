@@ -37,6 +37,10 @@ $ LIBRATO_EMAIL=me@example.co LIBRATO_KEY=123456 irb -r dashboarder
   # compose an individual instrument
   # will not overwrite if already exists
   Dashboarder::Instrument.compose(['my instrument', :first_metric, :second_metric])
+
+  # If an instrument has already been defined, you can compose
+  # like so:
+  Dashboarder::Dashboard.compose([:my_dashboard, :some_instrument, :some_other_instrument])
 ```
 
 ## Contributing
