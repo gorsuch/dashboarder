@@ -23,11 +23,11 @@ $ LIBRATO_EMAIL=me@example.co LIBRATO_KEY=123456 irb -r dashboarder
 ```
 
 ```ruby
-  # compose an instrument
-  Dashboarder::Instrument.compose(:my_instrument, [:my_metric, :my_other_metric])
+# compose an instrument
+Dashboarder::Instrument.compose(:my_instrument, [:my_metric, :my_other_metric])
 
-  # compose a dashboard
-  Dashboarder::Dashboard.compose(:my_dashboard, [:my_instrument, :my_other_instrument])
+# compose a dashboard
+Dashboarder::Dashboard.compose(:my_dashboard, [:my_instrument, :my_other_instrument])
 ```
 
 ## Contributing
